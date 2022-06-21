@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,47 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Livraria</title>
 </head>
+
 <body>
-    <div id="conteiner">
+    <div id="container">
         <form action="">
-            <h1>Livraria</h1>
-            <label for="título">Título</label>
-            <input type="text" name="autor"><br><br>
+            <h1>Gerenciamento de Livros</h1>
+            <div class="grid_livraria">
+                <div>
+                    <label for="título">Título</label>
+                    <input type="text" name="titulo"><br>
+                </div>
 
-            <label for="categoria"></label>
-            <select name="selecao" id="selecao">
-                <option value="drama">Drama</option>
-                <option value="ficcao">Ficção</option>
-                <option value="romance">Romance</option>
-                <option value="terror">Terror</option>
-            </select>
+                <div>
+                    <label for="categoria">Categoria</label>
+                    <input type="text" name="categoria">
+                </div>
 
-            <label for="valor">Valor</label>
-            <input typ="text" name="valro"><br><br>
+                <div>
+                    <label for="autor">Autor</label>
+                    <input type="text" name="autor">
+                </div>
 
-            <button>cadastrar</button>
+                <div>
+                    <label for="categoria"></label>
+                    <select name="selecao" id="selecao">
+                        <option value="drama">Drama</option>
+                        <option value="ficcao">Ficção</option>
+                        <option value="romance">Romance</option>
+                        <option value="terror">Terror</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="valor">Valor</label>
+                    <input type="text"><br>
+                </div>
+
+                <input type="button" value="Enviar">
+            </div>
         </form>
-    </div> 
-<script src="js/script.js"></script>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
