@@ -11,29 +11,25 @@
 
 <body>
     <div id="container">
-        <form action="">
+        <form action="#">
             <h1>Gerenciamento de Livros</h1>
             <div class="grid_livraria">
                 <div>
-                    <label for="título">Título</label>
-                    <input type="text" name="titulo"><br>
-                </div>
-
-                <div>
-                    <label for="categoria">Categoria</label>
-                    <input type="text" name="categoria">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Digite o título"><br>
                 </div>
 
                 <div>
                     <label for="autor">Autor</label>
-                    <input type="text" name="autor">
+                    <input type="text" id="autor" name="autor" placeholder="Digite autor">
                 </div>
 
                 <div>
-                    <label for="categoria"></label>
-                    <select name="selecao" id="selecao">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" id="categoria">
+                        <option value="" select disable>Selecione a categoria</option>
                         <option value="drama">Drama</option>
-                        <option value="ficcao">Ficção</option>
+                        <option value="ficção">Ficção</option>
                         <option value="romance">Romance</option>
                         <option value="terror">Terror</option>
                     </select>
@@ -41,11 +37,12 @@
 
                 <div>
                     <label for="valor">Valor</label>
-                    <input type="text"><br>
+                    <input type="text" id="valor" name="valor" placeholder="R$ 00.00"><br>
                 </div>
-
-                <input type="button" value="Enviar">
             </div>
+
+            <button type="button" onclick="cadastrar()">Cadastrar</button>
+
         </form>
     </div>
     <script src="js/script.js"></script>
