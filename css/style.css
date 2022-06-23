@@ -8,6 +8,10 @@
 #container{
     width: 80%;
     margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    background-color:aquamarine;
 }
 
 h1{
@@ -24,10 +28,20 @@ h1{
 input, select{
     width: 100%;
     padding: 10px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 button{
     display: grid;
     margin: 10px auto;
     padding: 10px 20px;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color:bisque;
 }
