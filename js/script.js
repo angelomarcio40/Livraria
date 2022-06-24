@@ -51,5 +51,17 @@ const cadastrar = () =>{
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
         }
+    }).then(function(response){
+        response.json().then(resposta=>{
+            // Aqui é onde iremos receber e tratar a resposta do PHP
+            Swal.fire(
+                'Atenção!',
+                resposta.Mensagem,
+                'success'
+              )
+
+            // Resetar o formulário - limpar os campos
+            document.getElementById('form_cadastrar').reset()
+        })
     })
 }

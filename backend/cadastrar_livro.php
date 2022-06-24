@@ -9,17 +9,36 @@ $categoria = $_POST['categoria'];
 $valor = $_POST['valor'];
 
 // Conexao com o banco de dados
-    $servidor = 'localhost';
-    $usuario = 'root';
-    $senha = '';
+$servidor = 'localhost';
+$usuario = 'root';
+$senha = '';
+$bancodados = 'db_livraria';
 
-    try {
-        $conexao = new PDO("mysql:host=$servidor;dbname=myDB", $usuario, $senha);
-        // set the PDO error mode to exception
-        $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-      } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-      }
+try {
+  // Definindo as configurções de conexão com o banco de dados
+  $conexao = new PDO("mysql:host=$servidor;dbname=$bancodados;charset=utf8", $usuario, $senha);
+  // seta o modo de erro do PDO para exception 
+  $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  // querry de inserção de dados no DB MySQL
+  $sql = "INSERT into tb_livros(titulo,autor,categoria,valor)values('$titulo','$autor','$categoria',$valor)";
+
+  // prepara a execução da query sql apache_child_terminate
+  $comando = $conexao->prepare($sql);
+
+  // executa a query preparada acima
+  $comando->execute();
+
+  // Criar um array para resposta ao usuário
+  $resposta = array("Resposta"=>"OK","Mensagem"=>"Cadastro realizado com sucesso!");
+ 
+  // onverte o array resposta em JSON
+  // JSON_UNESCAPED_UNICODE = Manter a arquivo com mapa de carater padrão
+  $json = json_encode($resposta,JSON_UNESCAPED_UNICODE);
+
+  echo $json;
+
+} catch (PDOException $e) {
+  echo "Erro: " . $e->getMessage();
+}
 // Final da conexao
-?>
