@@ -21,7 +21,7 @@ try {
   $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // querry de inserção de dados no DB MySQL
-  $sql = "INSERT into tb_livros(titulo,autor,categoria,valor)values('$titulo','$autor','$categoria',$valor)";
+  $sql = "INSERT INTO tb_livros(titulo,autor,id_categoria,valor)VALUES('$titulo','$autor',$categoria,$valor)";
 
   // prepara a execução da query sql apache_child_terminate
   $comando = $conexao->prepare($sql);
@@ -30,15 +30,15 @@ try {
   $comando->execute();
 
   // Criar um array para resposta ao usuário
-  $resposta = array("Resposta"=>"OK","Mensagem"=>"Cadastro realizado com sucesso!");
+  $resposta = array("Resposta" => "OK", "Mensagem" => "Cadastro realizado com sucesso!");
  
-  // onverte o array resposta em JSON
-  // JSON_UNESCAPED_UNICODE = Manter a arquivo com mapa de carater padrão
-  $json = json_encode($resposta,JSON_UNESCAPED_UNICODE);
-
-  echo $json;
-
 } catch (PDOException $e) {
-  echo "Erro: " . $e->getMessage();
+  // Aqui e tratado o erro e retornado ao usuário
+  $resposta = array("Resposta" => "Erro", "Mensagem" =>$e->getMessage());
 }
+ // onverte o array resposta em JSON
+  // JSON_UNESCAPED_UNICODE = Manter a arquivo com mapa de carater padrão
+$json = json_encode($resposta, JSON_UNESCAPED_UNICODE);
+
+echo $json;
 // Final da conexao
