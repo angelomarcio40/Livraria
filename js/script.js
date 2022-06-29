@@ -77,3 +77,10 @@ const cadastrar = () => {
         })
     })
 }
+// Final função cadastrar
+
+// Inicio da função listar
+const listar = () =>{
+    fetch('backend/listar-livro.php')
+}
+// Final da função listar
