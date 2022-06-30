@@ -45,3 +45,42 @@ button{
     border-top-right-radius: 20px;
     background-color:bisque;
 }
+
+/* grid de listagem de livros */
+#lista-livros-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+figure{
+    width: 100%;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+.livros-img{
+    width: 100%;
+}
+
+figcation{
+    padding: 10px;
+}
+
+h2,h6,h5,small{
+    line-height: 1.7;
+}
+
+.btn-comprar{
+    width: 100%;
+    background-color: #f7efbe;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: grid; 
+}
+
+/* final da grid de listagem de livros */
